@@ -1,6 +1,7 @@
-Silverstripe Vagrant Development Environment
+FULL CREDIT
 ==
-All the work for this was completed by others I've just updated a couple of files.
+Full credit to Silverstripe Australia. All the work for this was completed by others, I've just updated a couple of files.
+https://github.com/silverstripe-australia/vagrant-environment
 
 Silverstripe Vagrant Development Environment
 ===
