@@ -11,13 +11,13 @@
 
 ##Set this to suit you options from here:
 # http://php.net/timezones
-TIMEZONE='Australia/Melbourne'
+TIMEZONE='Australia/Brisbane' # UPDATE LOCATION BEFORE RUNNING
 
 ##Set a an email address for the server admin
-SERVERADMIN="RENAME@EXAMPLE.COM"
+SERVERADMIN="ADD EMAIL ADDRESS HERE"
 
 ##Set a URL for the site e.g vagrant-example.dev
-URL="vagrant.dev"
+URL="ADD URL HERE" # Do not add the protocl - e.g. http://
 
 #Other variables
 UNIXDATE=`date +%s`
@@ -35,10 +35,10 @@ fi
 
 # Force Apt to use your local mirror - this will override the original VM's config
 cat << __EOF__ >  /etc/apt/sources.list
-deb mirror://mirrors.ubuntu.com/mirrors.txt saucy main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt saucy-updates main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt saucy-backports main restricted universe multiverse
-deb mirror://mirrors.ubuntu.com/mirrors.txt saucy-security main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt vivid main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt vivid-updates main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt vivid-backports main restricted universe multiverse
+deb mirror://mirrors.ubuntu.com/mirrors.txt vivid-security main restricted universe multiverse
 __EOF__
 
 # update apt to make sure we have the most recent manifests
@@ -255,6 +255,15 @@ if [ ! -f /home/vagrant/.ssh/vagrant_id_rsa ];
   ##cp /home/vagrant/.ssh/vagrant_id_rsa /vagrant
 fi
 
+#
+# WARNING - PLEASE BE AWARE
+# MOST PROJECT DO NOT NEED LATEX SO YOU SHOULD COMMENT THIS OUT AS IT
+# IS A 3GB DOWNLOAD AND INSTALL
+#
+#Install texlive-full on the new VM 
+#apt-get -y install texlive-full
+#echo "textlive-full has been installed - hopefully"
+
 #composer
 #
 if [ ! -f /vagrant/composer.phar ]
@@ -264,6 +273,7 @@ if [ ! -f /vagrant/composer.phar ]
 
   if [ ! -f /var/www/build.xml ]
     then
-    /vagrant/composer.phar create-project -s dev silverstripe/ozzy /var/www
+    # You can change this to be another project if you like and you could use git clone etc.
+    /vagrant/composer.phar create-project silverstripe/installer /var/www
   fi
 fi
