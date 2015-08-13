@@ -1,4 +1,8 @@
 Silverstripe Vagrant Development Environment
+==
+All the work for this was completed by others I've just updated a couple of files.
+
+Silverstripe Vagrant Development Environment
 ===
 This vagrant set up builds a simple LAMP server and installs a copy of Silverstripe into the Apache web root (```/var/www```) using composer.
 The default ports for this box are:
