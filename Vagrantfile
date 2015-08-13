@@ -7,18 +7,8 @@
 
 Vagrant.configure("2") do |config|
 
-  #---Puppet Lab's Boxes---
-  #https://github.com/puppetlabs/puppet-vagrant-boxes
-  #Rolled for download here
-  # http://puppet-vagrant-boxes.puppetlabs.com/
-
-  #Ubuntu x64 with puppet
-  config.vm.box = "ubuntu-1310-x64-virtualbox-puppet.box"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-1310-x64-virtualbox-puppet.box"
-
-  #Ubuntu x64 LTS with puppet
-  #config.vm.box = "ubuntu-12042-x64-virtualbox-puppet.box"
-  #config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
+  #Ubuntu x64 with chef
+  config.vm.box = "chef/ubuntu-15.04"
 
   #---Networking---
 
